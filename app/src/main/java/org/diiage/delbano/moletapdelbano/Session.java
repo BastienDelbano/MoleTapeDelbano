@@ -56,6 +56,8 @@ public class Session implements Parcelable {
         return scores;
     }
 
+
+
     @Override
     public int describeContents() {
         return 0;
@@ -65,7 +67,7 @@ public class Session implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.name);
         parcel.writeSerializable(this.date);
-        parcel.writeSerializable(this.scores);
+        parcel.writeTypedList(this.scores);
     }
 
     public static final Parcelable.Creator<Session> CREATOR = new Parcelable.Creator<Session>()
@@ -83,9 +85,10 @@ public class Session implements Parcelable {
         }
     };
 
-    public Session(Parcel in) {
+
+    private Session(Parcel in) {
         this.name = in.readString();
         this.date = (Date)in.readSerializable();
-        this.scores = (ArrayList<Score>)in.readSerializable();
+        this.scores = in.createTypedArrayList(Score.CREATOR);
     }
 }

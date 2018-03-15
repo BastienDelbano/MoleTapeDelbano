@@ -14,7 +14,7 @@ public class ScoreActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         //on recup les info de la session
-        Session session = getIntent().getExtras().getParcelable(MainActivity.SESSION);;
+        Session session = getIntent().getExtras().getParcelable(MainActivity.SESSION);
 
         ListView lstScores = findViewById(R.id.scores);
         ScoresAdapter sa = new ScoresAdapter(this, session.getScores());

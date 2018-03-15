@@ -25,18 +25,6 @@ public class Score implements Parcelable {
         this.reactionTimeAvg = reactionTimeAvg;
     }
 
-    public static final Creator<Score> CREATOR = new Creator<Score>() {
-        @Override
-        public Score createFromParcel(Parcel in) {
-            return new Score(in);
-        }
-
-        @Override
-        public Score[] newArray(int size) {
-            return new Score[size];
-        }
-    };
-
     public int getPointCount() {
         return pointCount;
     }
@@ -76,6 +64,20 @@ public class Score implements Parcelable {
     public void setReactionTimeAvg(double reactionTimeAvg) {
         this.reactionTimeAvg = reactionTimeAvg;
     }
+
+
+    public static final Creator<Score> CREATOR = new Creator<Score>() {
+        @Override
+        public Score createFromParcel(Parcel in) {
+            return new Score(in);
+        }
+
+        @Override
+        public Score[] newArray(int size) {
+            return new Score[size];
+        }
+    };
+
 
     @Override
     public int describeContents() {

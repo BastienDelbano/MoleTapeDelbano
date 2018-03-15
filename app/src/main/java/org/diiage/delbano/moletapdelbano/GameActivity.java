@@ -48,7 +48,7 @@ public class GameActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         //on recup les info de la session
-        Session session = getIntent().getExtras().getParcelable(MainActivity.SESSION);;
+        Session session = getIntent().getExtras().getParcelable(MainActivity.SESSION);
 
         startTimer();
 
